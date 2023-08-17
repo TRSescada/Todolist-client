@@ -7,12 +7,13 @@ const NavMain = () => {
 	return (
 		<nav className="NavMain">
 			<NavLink className="logo" to="/">
-				App name
+				Todo
 			</NavLink>
 			{isLoggedIn && (
 				<>
 					<NavLink to="/profile">{currentUser && currentUser.email}</NavLink>
 					<button onClick={removeUser}>Log-Out</button>
+					<NavLink to="/todolist">Todo List</NavLink>
 				</>
 			)}
 			{!isLoggedIn && (

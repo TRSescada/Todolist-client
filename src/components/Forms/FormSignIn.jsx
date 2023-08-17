@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import useForm from "../../hooks/useForm"
-import apiHandler from "../../api/apiHandler"
-import useAuth from "../../auth/useAuth"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import useForm from "../../hooks/useForm";
+import apiHandler from "../../api/apiHandler";
+import useAuth from "../../auth/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const FormSignIn = () => {
 	const [{ email, password }, handleChange] = useForm({
@@ -24,7 +24,7 @@ const FormSignIn = () => {
 				navigate("/")
 			})
 			.catch((e) => {
-				setError(e.response.data)
+				setError(e.response.data.message);
 			})
 	}
 

@@ -16,7 +16,8 @@ const FormSignUp = () => {
 				navigate("/signin")
 			})
 			.catch((error) => {
-				setError(error.response.data)
+				console.log("what :", error)
+				setError(error.response.data.message);
 			})
 	}
 	return (

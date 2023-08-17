@@ -6,6 +6,9 @@ import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import LoggedOut from "./components/LoggedOut/LoggedOut"
+import TodoListDisplay from "./pages/TodoListDisplay"
+import TaskListDisplay from "./pages/TaskListDisplay"
+import TaskItemDisplay from "./pages/TaskItemDisplay"
 
 function App() {
 	return (
@@ -20,6 +23,9 @@ function App() {
 				<Route element={<PrivateRoute />}>
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/todolist" element={<TodoListDisplay />} />
+					<Route path="/tasklist" element={<TaskListDisplay />}></Route>
+					<Route path="/taskitem" element={<TaskItemDisplay />}></Route>
 				</Route>
 			</Routes>
 		</div>
