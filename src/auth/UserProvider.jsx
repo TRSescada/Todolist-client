@@ -33,7 +33,8 @@ const UserProvider = ({ children }) => {
 	const removeToken = () => {
 		localStorage.removeItem("authToken")
 	}
-	const storeToken = (token) => {
+	const storeItems = (token,id) => {
+		localStorage.setItem("id", id)
 		localStorage.setItem("authToken", token)
 	}
 
@@ -42,7 +43,7 @@ const UserProvider = ({ children }) => {
 		isLoading: auth.isLoading,
 		isLoggedIn: auth.isLoggedIn,
 		removeUser,
-		storeToken,
+		storeItems,
 		authenticateUser,
 	}
 

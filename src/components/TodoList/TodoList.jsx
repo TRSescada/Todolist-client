@@ -120,8 +120,11 @@ function handleEditInputChange(event) {
   }
   // function to handle when the "Edit" button is clicked
 function handleEditTodoList(todoLists) { 
-  setIsEditing(true);
-  setSelectedTodoList({...todoLists});
+  
+
+  // {{chamseddine try }}
+  // setIsEditing(true);
+  // setSelectedTodoList({...todoLists});
 }
   return (
     <div className='todo-list'>

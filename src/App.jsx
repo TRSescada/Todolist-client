@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom"
+import './App.css'
 import NavMain from "./components/Nav/NavMain"
 import Home from "./pages/Home"
 import Signin from "./pages/Signin"
@@ -6,9 +7,10 @@ import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import LoggedOut from "./components/LoggedOut/LoggedOut"
-import TodoListDisplay from "./pages/TodoListDisplay"
+import Tasklist from "./pages/Task"
 import TaskListDisplay from "./pages/TaskListDisplay"
 import TaskItemDisplay from "./pages/TaskItemDisplay"
+import Todo from "./pages/Todo"
 
 function App() {
 	return (
@@ -19,13 +21,13 @@ function App() {
 				<Route element={<LoggedOut />}>
 					<Route path="/signin" element={<Signin />} />
 					<Route path="/signup" element={<Signup />} />
+
 				</Route>
 				<Route element={<PrivateRoute />}>
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
 					<Route path="/profile" element={<Profile />} />
-					<Route path="/todolist" element={<TodoListDisplay />} />
-					<Route path="/tasklist" element={<TaskListDisplay />}></Route>
-					<Route path="/taskitem" element={<TaskItemDisplay />}></Route>
+					<Route path="/task" element={<Tasklist  />} />
+					<Route path="/todolist" element ={<Todo/>}></Route>
 				</Route>
 			</Routes>
 		</div>

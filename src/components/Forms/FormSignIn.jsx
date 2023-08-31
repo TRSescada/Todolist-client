@@ -11,17 +11,16 @@ const FormSignIn = () => {
 	})
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
-	const { storeToken, authenticateUser } = useAuth()
+	const { storeItems, authenticateUser } = useAuth()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		apiHandler
 			.signin({ email, password })
 			.then((res) => {
-				console.log(res)
-				storeToken(res.authToken)
+				storeItems(res.authToken,res.id)
 				authenticateUser()
-				navigate("/")
+				navigate("/task")
 			})
 			.catch((e) => {
 				setError(e.response.data.message);
